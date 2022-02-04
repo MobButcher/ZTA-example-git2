@@ -12,7 +12,27 @@
  * @param input {number[]} Array to be sorted
  * @returns {number[]} Sorted array of numbers
  */
+
 function sort(input) {
-    // Your code goes here.
-    return input;
+    function quicksort(array, begin, end) {
+        if (end - begin < 2) return array;
+        const pivot = Math.ceil((begin + end) / 2);
+        let l = begin;
+        let r = end;
+        while (l < r) {
+            while (array[l] < array[pivot]) l++;
+            while (array[r] > array[pivot]) r--;
+            if (l < r) {
+                const t = array[l];
+                array[l] = array[r];
+                array[r] = t;
+                l++;
+                r--;
+            }
+        }
+        quicksort(array, begin, pivot);
+        quicksort(array, pivot, end);
+        return array;
+    }
+    return quicksort(input, 0, input.length - 1);
 }
