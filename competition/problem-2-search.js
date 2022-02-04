@@ -14,6 +14,10 @@
  * @returns {number} Index of `target` in an array, or -1 if no `target` found
  */
  function search(arr, target) {
-    // Your code goes here.
-    return arr[0];
+     for (let i = 0; i < arr.length; i++) {
+         if (arr[i] == target) {
+             return i;
+         }
+     }
+     return -1;
 }
