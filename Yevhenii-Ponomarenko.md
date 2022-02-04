@@ -1,0 +1,1 @@
+Greetings! I hope you're drinking enough water and taking care of yourself.
