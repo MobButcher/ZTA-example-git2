@@ -13,6 +13,16 @@
  * @returns {number[]} Sorted array of numbers
  */
 function sort(input) {
-    // Your code goes here.
+    for (let i = 0; i < input.length; i++) {
+        let minindex = i;
+        for (let j = i + 1; j < input.length; j++) {
+            if (input[j] < input[minindex]) {
+                minindex = j;
+            }
+        }
+        const t = input[minindex];
+        input[minindex] = input[i];
+        input[i] = t;
+    }
     return input;
 }
